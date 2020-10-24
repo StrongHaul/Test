@@ -23,7 +23,7 @@ namespace Test
 			label2.Text = currentAttempt.ToString();
 		}
 
-		private void button1_Click(object sender, EventArgs e)		// првоерить
+		private void button1_Click(object sender, EventArgs e)      // првоерить
 		{
 			if (textBox1.Text.Length < 4)
 			{
@@ -62,20 +62,20 @@ namespace Test
 
 		private void textBox1_KeyPress(object sender, KeyPressEventArgs e)      // ввод цифры
 		{
-			var number = e.KeyChar;
+			var inputValue = e.KeyChar;
 			if (textBox1.Text.Length < 4)
 			{
-				if (!char.IsDigit(number) && number != 8)   // если не число и не backspace
+				if (!char.IsDigit(inputValue) && inputValue != 8)   // если не число и не backspace
 					e.Handled = true;       // пропустить обработку события
 			}
 			else
 			{
-				if (number != 8)
+				if (inputValue != 8 && textBox1.SelectionLength == 0)
 					e.Handled = true;
 			}
 		}
 
-		public bool NumberMatch(int[] a, int[] b)		// проверка чисел на полное совпадение
+		public bool NumberMatch(int[] a, int[] b)       // проверка чисел на полное совпадение
 		{
 			bool match = true;
 			for (int i = 0; i < 4; i++)
