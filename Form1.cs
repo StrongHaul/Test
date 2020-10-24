@@ -45,6 +45,7 @@ namespace Test
 				{
 					label3.Text = $"Угадали!\nЧисло обновлено.";
 					currentAttempt = maxAttemps;
+					label2.Text = currentAttempt.ToString();
 					return;
 				}
 				Compare(genNumber, userNumber);
